@@ -2,6 +2,7 @@
 """mapper.py"""
 
 
+
 import os
 import re
 import string
@@ -25,8 +26,8 @@ def strip_list_xml_tags(mylist):
 
 
 #Input comes from STDIN (standard input)
-for line in sys.stdin:	
-	word= strip_list_xml_tags(line) 
+for line in sys.stdin:
+	word= strip_list_xml_tags(line)
 	words=str(word).split()
 	tokenized_sent = [w for w in words]
 	tokenized_pun=[re.sub(r'[^\w\s]','',l) for l in words] #Remove punctuation
@@ -35,6 +36,5 @@ for line in sys.stdin:
 	list=[token for token in tokenized_space]
 	key=os.readlink('/proc/self/fd/0').split(":")
 	key=key[1]
-	dict[key]= list	
+	dict[key]= list
 print(dict)
-
