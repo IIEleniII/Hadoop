@@ -3,6 +3,7 @@ import sys
 import os
 import re
 
+
 def low(z):
     return z.lower()
 
